@@ -1,21 +1,23 @@
-gradeNumList = []
+
+negativeNumList = []
 total = 0
+i = 1
+print("Enter negative numbers otherwise 'X' to quit")
 
 while True:
-    user_input = input("Enter a negative number (or 'X' to exit): ")
+    userInput = input(f"Enter NEGATIVE number ({i}): ")
 
-    if user_input == 'X':
+    if userInput == 'X':
         break
 
-    try:
-        num = int(user_input)
-        if num < 0:
-            gradeNumList.append(num)
-            total += num
-        else:
-            print("Not a negative number. Try again.")
-    except ValueError:
-        print("Invalid input. Please enter a valid number or 'X' to exit.")
+    num = float(userInput)
+    if num < 0:
+        negativeNumList.append(num)
+        total += num
+        i += 1
+    else:
+        print("*** Not a negative number, try again.")
 
-print("Negative Numbers:", gradeNumList)
-print("Sum of Entered Numbers:", total)
+print("\b")
+print("negativeNumList", negativeNumList)
+print("Sum :", total)
